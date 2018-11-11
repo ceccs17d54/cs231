@@ -1,3 +1,9 @@
+/*
+ * 06
+ * merge sort (using recursion)
+ * Author : Vimal K R
+ * Roll no: 54
+ */
 #include<stdio.h>
 
 void merge(int a[],int low, int mid, int high)
