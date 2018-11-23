@@ -12,14 +12,16 @@ void swap(int *a, int *b) {
 	*b = temp;
 }
 int partition(int array[], int low, int high) {
-	int i=low;
-	int j=high;
+	int i=low-1;
+	int j=high+1;
 	int pivot=array[low];
 	while (1) {
-		while (array[i] < pivot)
-			i++;
-		while (array[j] > pivot)
+		do {
+			i++
+		} while (array[i] < pivot);
+		do {
 			j--;
+		} while (array[j] > pivot);
 		if (i>=j)
 			return j;
 		swap(&array[i], &array[j]);
@@ -29,7 +31,7 @@ void quickSort(int array[], int low, int high) {
 	int partitionIndex;
 	if (low < high) {
 		partitionIndex = partition(array, low, high);
-		quickSort(array, low, partitionIndex);
+		quickSort(array, low, partitionIndex-1);
 		quickSort(array, partitionIndex+1, high);
 	}
 }
